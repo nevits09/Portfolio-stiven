@@ -1,0 +1,135 @@
+/* Contenedor principal de la sección de proyectos */
+.projectsSection {
+  padding: 4rem 2rem;        /* Espaciado interno generoso */
+  background-color: #1a1a24; /* Fondo oscuro acorde al tema de la aplicación */
+  color: #ffffff;            /* Texto en color blanco */
+  display: flex;
+  flex-direction: column;    /* Disposición en columna para alineación vertical */
+  align-items: center;       /* Centra el título y el grid en el eje horizontal */
+}
+
+/* Título principal de la sección */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #646cff;            /* Color de acento principal */
+  border-bottom: 2px solid #646cff; /* Línea de acento inferior */
+  padding-bottom: 0.5rem;
+}
+
+/* Grilla adaptable que reordena las tarjetas según el ancho de pantalla */
+.gridContainer {
+  display: grid;
+  /* Crea columnas dinámicas de mínimo 300px que se expanden equitativamente */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;                 /* Separación uniforme entre tarjetas */
+  width: 100%;
+  max-width: 1200px;         /* Limita el ancho en pantallas grandes */
+}
+
+/* Estilos individuales para la tarjeta de proyecto */
+.card {
+  background-color: #242436; /* Fondo secundario de la tarjeta */
+  border-radius: 12px;       /* Bordes suavizados */
+  overflow: hidden;          /* Recorta las esquinas de la imagen superior */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Elevación inicial */
+  display: flex;
+  flex-direction: column;    /* Mantiene la imagen arriba y el contenido abajo */
+  justify-content: space-between; /* Distribuye el contenido y mantiene los botones abajo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el cursor */
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.card:hover {
+  transform: translateY(-6px); /* Eleva ligeramente la tarjeta */
+  box-shadow: 0 8px 20px rgba(100, 108, 255, 0.2); /* Sombra resaltada con tono de acento */
+}
+
+/* Imagen representativa del proyecto */
+.cardImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;         /* Mantiene la proporción de la imagen sin deformarla */
+}
+
+/* Cuerpo de la tarjeta con el contenido informativo */
+.cardBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;              /* Ocupa el espacio restante para homogeneizar alturas */
+}
+
+/* Título del proyecto */
+.cardTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+/* Descripción del proyecto */
+.cardDescription {
+  font-size: 0.95rem;
+  color: #a0a0b0;           /* Gris secundario para favorecer la lectura */
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;              /* Empuja la lista de tecnologías y botones hacia abajo */
+}
+
+/* Etiquetas de tecnologías usadas dentro de cada proyecto */
+.techList {
+  display: flex;
+  flex-wrap: wrap;           /* Permite que las etiquetas se acomoden en varias líneas */
+  gap: 0.5rem;               /* Espaciado entre etiquetas */
+  margin-bottom: 1.5rem;
+}
+
+/* Badge o etiqueta individual de tecnología */
+.techTag {
+  background-color: #1a1a24; /* Fondo contraste para destacar dentro de la tarjeta */
+  color: #646cff;            /* Texto en color de acento */
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Acciones/Enlaces al código y a la demostración en vivo */
+.cardActions {
+  display: flex;
+  gap: 1rem;                 /* Separación entre el botón primario y secundario */
+}
+
+/* Estilo base para los botones de acción */
+.linkButton {
+  flex: 1;                   /* Hace que ambos botones tengan el mismo ancho */
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;     /* Remueve el subrayado por defecto en los enlaces */
+  transition: background-color 0.2s ease;
+}
+
+/* Botón primario (Ej. Demo en vivo) */
+.primaryLink {
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+.primaryLink:hover {
+  background-color: #535bf2; /* Tono más oscuro al interactuar */
+}
+
+/* Botón secundario (Ej. Código fuente en GitHub) */
+.secondaryLink {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #646cff;
+}
+
+.secondaryLink:hover {
+  background-color: rgba(100, 108, 255, 0.1); /* Fondo sutil al interactuar */
+}
